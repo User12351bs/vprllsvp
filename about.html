@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volty Studio</title>
+    <link rel="icon" href="assets/logo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<style>
+    #hero {
+        height: 40vh !important; /* Altura reducida solo para el banner */
+        display: flex;
+        background-image: url('assets/bannerabout.jpg') !important;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-bottom: 0;
+    }
+    
+    #privacy-content {
+        background-color: #000;
+        padding: 50px;
+        color: white;
+    }
+    
+    .profile-header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    
+    .profile-info {
+        text-align: left;
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 30px;
+        border-radius: 10px;
+        margin-bottom: 30px;
+        width: 100%;
+    }
+    
+    .profile-info h1 {
+        font-size: 2.2rem;
+        margin: 0 0 20px 0;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        color: #4CAF50;
+        border-bottom: 2px solid #4CAF50;
+        padding-bottom: 10px;
+    }
+    
+    .profile-info h2 {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin: 10px 0 0 0;
+        font-weight: 400;
+    }
+    
+    #project .view-all-container {
+        margin: 50px auto;
+        text-align: center;
+        max-width: 1000px;
+    }
+    
+    /* Add paragraph styling for better readability */
+    .policy-paragraph {
+        margin-bottom: 20px;
+    }
+    
+    /* Add section titles */
+    .policy-section-title {
+        font-size: 1.3rem;
+        color: #4CAF50;
+        margin: 25px 0 15px 0;
+        font-weight: 600;
+    }
+    
+    /* Estilos para el modal de advertencia */
+    .warning-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+    }
+    
+    .warning-content {
+        background-color: #1a1a1a;
+        border-radius: 10px;
+        padding: 30px;
+        max-width: 500px;
+        text-align: center;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+    
+    .warning-content h2 {
+        color: #6dd17f;
+        margin-bottom: 20px;
+    }
+    
+    .warning-content p {
+        color: white;
+        margin-bottom: 20px;
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    
+    .warning-icon {
+        font-size: 50px;
+        color: #e74c3c;
+        margin-bottom: 20px;
+    }
+
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Función para detectar si es un dispositivo móvil
+        function isMobileDevice() {
+            return (window.innerWidth <= 768) || 
+                   /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+        
+        // Mostrar notificación solo en dispositivos móviles
+        if (isMobileDevice()) {
+            const notification = document.getElementById('mobile-notification');
+            const closeButton = notification.querySelector('.close-button');
+            
+            // Mostrar la notificación con animación
+            setTimeout(function() {
+                notification.classList.add('show');
+            }, 500);
+            
+            // Ocultar la notificación después de 10 segundos
+            const autoHideTimeout = setTimeout(function() {
+                notification.classList.remove('show');
+                
+                // Añadir un timeout para cambiar el z-index después de la animación
+                setTimeout(function() {
+                    notification.style.zIndex = '-1'; // Poner por debajo de todo
+                }, 500); // Mismo tiempo que la duración de la transición
+            }, 10500);
+            
+            // Evento para cerrar la notificación al hacer clic en el botón de cierre
+            closeButton.addEventListener('click', function() {
+                notification.classList.remove('show');
+                clearTimeout(autoHideTimeout); // Cancelar el cierre automático
+                
+                // Añadir un timeout para cambiar el z-index después de la animación
+                setTimeout(function() {
+                    notification.style.zIndex = '-1'; // Poner por debajo de todo
+                }, 500); // Mismo tiempo que la duración de la transición
+            });
+        }
+    });
+</script>
+<body>
+    <!-- Notificación para dispositivos móviles -->
+    <div id="mobile-notification" class="mobile-notification">
+        <div class="close-button">
+            <i class="fas fa-times"></i>
+        </div>
+        <div class="notification-content">
+            <div class="notification-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <div class="notification-text">
+                <h3>¡Atención!</h3>
+                <p>Esta página no está preparada para dispositivos móviles. Para disfrutar de la mejor experiencia, te recomendamos acceder desde un ordenador.</p>
+            </div>
+        </div>
+    </div>
+    
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li> 
+                    <li><a href="eventos.html">Eventos</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <a href="index.html" class="logo-title">
+                <img src="assets/logo-trans.png" alt="Logo" class="logo">
+                <h1>VOLTY STUDIO</h1>
+            </a>
+        </div>
+    </header>   
+
+    <main>
+        <section id="hero">
+            <!-- Solo mantener el banner de fondo aquí -->
+        </section>
+        
+        <section id="privacy-content">
+            <div class="profile-header">
+                <div class="profile-info">
+                    <h1>Volty Studio</h1>
+                    
+                    <div class="policy-paragraph">
+                        <h2>Volty Studio nació en el año 2023 de la mano de LutukiSolo y Basti con el propósito de llevar la pasión por la competencia y la creatividad al universo de Minecraft. Desde sus inicios, la compañía se ha centrado en recrear grandes experiencias competitivas, adaptando cada detalle para mantener la esencia original y, al mismo tiempo, aportar un enfoque propio. Así fue como, en su primer proyecto, Volty Studio volvió a dar vida a DEDSAFIO, el reto de treinta días originado por <a href="https://eufonia.studio/" target="_blank" style="color: #4CAF50;">Eufonia Studio</a> y <a href="https://www.twitchrivals.com/" target="_blank" style="color: #4CAF50;">Twitch Rivals</a>, ofreciendo a la comunidad una versión cuidadosamente diseñada y supervisada para garantizar la máxima inmersión y diversión.</h2>
+                        <h2>En 2024, Volty Studio presentó VOLTYSAFIO 3, nuestra recreación de DEDSAFIO 3, que reunió a doscientos participantes dispuestos a superar una serie de pruebas basadas en estrategia, habilidad y colaboración. Gracias a toda la experiencia acumulada durante nuestra versión de DEDSAFIO en 2023, organizamos esta tercera edición con un nivel de detalle y pulido superiores, perfeccionando mecánicas, afinando la logística y optimizando cada aspecto de la experiencia del jugador, todo y que aún no somos perfectos...</h2>
+                        <h2>Con la mirada puesta en el futuro, Volty Studio trabaja para estrechar lazos con su comunidad mediante eventos periódicos, contenido exclusivo y canales de comunicación abiertos donde cada sugerencia encuentra su espacio. A corto plazo, el objetivo es consolidar una base de seguidores activa y participativa que nos inspire a mejorar constantemente; a medio plazo, planeamos dar el salto hacia la creación de eventos totalmente originales, desarrollando minijuegos propios y explorando nuevas plataformas y formatos que enriquezcan aún más la experiencia interactiva.</h2>
+                        <h2>En Volty Studio entendemos que cada partida es mucho más que un enfrentamiento virtual: es la oportunidad de forjar comunidad, descubrir talento y crear recuerdos compartidos. Te invitamos a acompañarnos en este viaje y a formar parte de la próxima gran aventura que diseñemos.</h2>
+                    </div>
+                        <h2>Discord: <a href="https://discord.voltystudio.club/" target="_blank" style="color: #4CAF50;">https://discord.voltystudio.club/</a></h2>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-logo">
+            <img src="assets/logo-trans.png" alt="Volty Logo">
+        </div>
+        <div class="footer-column">
+            <h3>COMUNIDAD</h3>
+            <a href="https://discord.voltystudio.club" target="_blank" class="discord-btn">
+                <img src="assets/discord.png" alt="Discord Logo">
+            </a>
+        </div>
+        <div class="footer-column">
+            <h3>VOLTY TEAM</h3>
+            <div class="team-section">
+                <div class="team-member" data-name="LutukiSolo">
+                    <a href="lutukisolo.html">
+                        <img src="assets/fto_lutukisolo.png" alt="LutukiSolo">
+                    </a>
+                </div>
+                <div class="team-member" data-name="Basti">
+                    <a href="basti.html">
+                        <img src="assets/fto_basti.png" alt="basti">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-column">
+            <h3>EMPRESA</h3>
+            <a href="privacy.html">Política de privacidad</a>
+            <a href="terms.html">Términos y condiciones</a>
+            <a href="about.html">Acerca de</a>
+        </div>
+    </footer>
+    <div class="footer-bottom2">
+        <span>Volty Studio v0.0.2 © 2023-2025 - Todos los derechos reservados a Volty Studio marca registrada.</span>
+    </div>
+    </body>
+    </html>

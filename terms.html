@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volty Studio</title>
+    <link rel="icon" href="assets/logo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<style>
+    #hero {
+        height: 40vh !important; /* Altura reducida solo para el banner */
+        display: flex;
+        background-image: url('assets/bannerterms.jpg') !important;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-bottom: 0;
+    }
+    
+    #privacy-content {
+        background-color: #000;
+        padding: 50px;
+        color: white;
+    }
+    
+    .profile-header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    
+    .profile-info {
+        text-align: left;
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 30px;
+        border-radius: 10px;
+        margin-bottom: 30px;
+        width: 100%;
+    }
+    
+    .profile-info h1 {
+        font-size: 2.2rem;
+        margin: 0 0 20px 0;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        color: #4CAF50;
+        border-bottom: 2px solid #4CAF50;
+        padding-bottom: 10px;
+    }
+    
+    .profile-info h2 {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin: 10px 0 0 0;
+        font-weight: 400;
+    }
+    
+    #project .view-all-container {
+        margin: 50px auto;
+        text-align: center;
+        max-width: 1000px;
+    }
+    
+    /* Add paragraph styling for better readability */
+    .policy-paragraph {
+        margin-bottom: 20px;
+    }
+    
+    /* Add section titles */
+    .policy-section-title {
+        font-size: 1.3rem;
+        color: #4CAF50;
+        margin: 25px 0 15px 0;
+        font-weight: 600;
+    }
+    
+    /* Estilos para el modal de advertencia */
+    .warning-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+    }
+    
+    .warning-content {
+        background-color: #1a1a1a;
+        border-radius: 10px;
+        padding: 30px;
+        max-width: 500px;
+        text-align: center;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+    
+    .warning-content h2 {
+        color: #6dd17f;
+        margin-bottom: 20px;
+    }
+    
+    .warning-content p {
+        color: white;
+        margin-bottom: 20px;
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    
+    .warning-icon {
+        font-size: 50px;
+        color: #e74c3c;
+        margin-bottom: 20px;
+    }
+
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Función para detectar si es un dispositivo móvil
+        function isMobileDevice() {
+            return (window.innerWidth <= 768) || 
+                   /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+        
+        // Mostrar notificación solo en dispositivos móviles
+        if (isMobileDevice()) {
+            const notification = document.getElementById('mobile-notification');
+            const closeButton = notification.querySelector('.close-button');
+            
+            // Mostrar la notificación con animación
+            setTimeout(function() {
+                notification.classList.add('show');
+            }, 500);
+            
+            // Ocultar la notificación después de 10 segundos
+            const autoHideTimeout = setTimeout(function() {
+                notification.classList.remove('show');
+                
+                // Añadir un timeout para cambiar el z-index después de la animación
+                setTimeout(function() {
+                    notification.style.zIndex = '-1'; // Poner por debajo de todo
+                }, 500); // Mismo tiempo que la duración de la transición
+            }, 10500);
+            
+            // Evento para cerrar la notificación al hacer clic en el botón de cierre
+            closeButton.addEventListener('click', function() {
+                notification.classList.remove('show');
+                clearTimeout(autoHideTimeout); // Cancelar el cierre automático
+                
+                // Añadir un timeout para cambiar el z-index después de la animación
+                setTimeout(function() {
+                    notification.style.zIndex = '-1'; // Poner por debajo de todo
+                }, 500); // Mismo tiempo que la duración de la transición
+            });
+        }
+    });
+</script>
+<body>
+    <!-- Notificación para dispositivos móviles -->
+    <div id="mobile-notification" class="mobile-notification">
+        <div class="close-button">
+            <i class="fas fa-times"></i>
+        </div>
+        <div class="notification-content">
+            <div class="notification-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <div class="notification-text">
+                <h3>¡Atención!</h3>
+                <p>Esta página no está preparada para dispositivos móviles. Para disfrutar de la mejor experiencia, te recomendamos acceder desde un ordenador.</p>
+            </div>
+        </div>
+    </div>
+    
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li> 
+                    <li><a href="eventos.html">Eventos</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <a href="index.html" class="logo-title">
+                <img src="assets/logo-trans.png" alt="Logo" class="logo">
+                <h1>VOLTY STUDIO</h1>
+            </a>
+        </div>
+    </header>   
+
+    <main>
+        <section id="hero">
+            <!-- Solo mantener el banner de fondo aquí -->
+        </section>
+        
+        <section id="privacy-content">
+            <div class="profile-header">
+                <div class="profile-info">
+                    <h1>Términos y condiciones</h1>
+                    
+                    <div class="policy-paragraph">
+                        <h2>Última actualización: [2024/11/03]</h2>
+                        <h2>Te damos la bienvenida a Volty Studio. Al acceder y utilizar nuestros servicios, incluidas nuestras aplicaciones y plataformas de desarrollo en Minecraft, aceptas cumplir con los siguientes términos y condiciones. Si no estás de acuerdo con estos términos, te pedimos que no utilices nuestros servicios.</h2>
+                    </div>
+                    
+                    <div class="policy-section-title">Aceptación de los Términos</div>
+                    <div class="policy-paragraph">
+                        <h2>Para acceder a cualquier licencia bajo estos términos, debes aceptarlos como condiciones estrictas y vinculantes para todas tus licencias. Al utilizar cualquiera de los servicios de Volty Studio, aceptas estos Términos de Uso y nuestra Política de Confidencialidad. Nos reservamos el derecho de modificar estos términos en cualquier momento. Los cambios serán efectivos una vez publicados en esta página. Es tu responsabilidad revisar periódicamente estos Términos de Uso para estar informado sobre cualquier modificación.</h2>
+                    </div>
+                    
+                    <div class="policy-section-title">Servicios</div>
+                    <div class="policy-paragraph">
+                        <h2>Volty Studio ofrece una gama de servicios relacionados con el desarrollo de videojuegos en Minecraft, que incluyen, entre otros:</h2>
+                        <h2>Eventos: Actividades que tienen una duración de entre un día y una semana.</h2>
+                        <h2>Series: Proyectos que se extienden desde más de una semana hasta meses.</h2>
+                        <h2>Miniseries: Eventos con una duración de una semana.</h2>
+                        <h2>Torneos Competitivos: Competencias que duran desde un día hasta una semana.</h2>
+                    </div>
+                    
+                    <div class="policy-section-title">Licencia de Derechos de Autor</div>
+                    <div class="policy-paragraph">
+                        <h2>Volty Studio concede una licencia de derechos de autor para el software que te permite utilizarlo para cualquier propósito permitido, siempre que no infrinjas los derechos de autor del titular. No obstante, la distribución del software debe realizarse conforme a la Licencia de Distribución y cualquier modificación o creación de obras derivadas debe ajustarse a la Licencia de Cambios y Nuevas Obras.</h2>
+                    </div>
+                    
+                    <div class="policy-section-title">Licencia de Distribución</div>
+                    <div class="policy-paragraph">
+                        <h2>Volty Studio te otorga una licencia adicional que permite la distribución de copias del software. Esta licencia incluye la distribución de software modificado y obras derivadas según lo permitido por la Licencia de Cambios y Nuevas Obras.</h2>
+                    </div>
+                    
+                    <div class="policy-section-title">Notificaciones</div>
+                    <div class="policy-paragraph">
+                        <h2>Es tu responsabilidad asegurarte de que cualquier persona que reciba una copia del software de tu parte también reciba una copia de estos términos o la URL correspondiente, así como cualquier aviso de texto que comience con "Required Notice:" que el titular del copyright proporcionó con el software. Por ejemplo:</h2>
+                        <h2>Required Notice: Copyright Volty Studio</h2>
+                    </div>
+                    
+                    <div class="policy-section-title">Licencia de Cambios y Nuevas Obras</div>
+                    <div class="policy-paragraph">
+                        <h2>Volty Studio concede una licencia adicional para crear cambios y nuevas obras basadas en el software para cualquier propósito permitido.</h2>
+                    </div>
+                    
+                    <div class="policy-section-title">Licencia de Patentes</div>
+                    <div class="policy-paragraph">
+                        <h2>Volty Studio otorga una licencia de patentes relacionada con el software, abarcando las reclamaciones de patentes que el titular pueda licenciar, o que pueda llegar a licenciar, que infringirías al utilizar el software.</h2>
+                    </div>
+                    
+                    <div class="policy-section-title">No Competencia</div>
+                    <div class="policy-paragraph">
+                        <h2>Se permite cualquier propósito, excepto el de ofrecer productos que compitan con el software o con cualquier producto que el titular o sus afiliados desarrollen utilizando el software.</h2>
+                    </div>
+                    
+                    <div class="policy-section-title">Competencia</div>
+                    <div class="policy-paragraph">
+                        <h2>Los bienes y servicios compiten incluso si ofrecen funcionalidad a través de diferentes interfaces o en diferentes plataformas. Aplicaciones, bibliotecas, complementos y herramientas de desarrollo pueden ser considerados competidores, incluso si están escritos en diferentes lenguajes de programación. Esto también aplica a productos ofrecidos de forma gratuita; si comercializas un producto como un sustituto directo del software, se considera competencia.</h2>
+                    </div>
+                    
+                    <div class="policy-section-title">Nuevos Productos</div>
+                    <div class="policy-paragraph">
+                        <h2>Si utilizas el software para ofrecer un producto que no compite, pero el titular o sus afiliados lanzan una nueva versión del software que compite con tu producto, podrás seguir utilizando las versiones anteriores del software bajo estos términos antes de ofrecer tu producto competitivo, pero no las versiones posteriores.</h2>
+                    </div>
+                    
+                    <div class="policy-section-title">Ventas del Negocio</div>
+                    <div class="policy-paragraph">
+                        <h2>Si el titular o sus afiliados venden una línea de negocio que desarrolla el software o que utiliza el software para ofrecer un producto, el comprador también puede hacer valer la cláusula de No Competencia para ese producto.</h2>
+                    </div>
+                    
+                    <div class="policy-section-title">Uso Justo</div>
+                    <div class="policy-paragraph">
+                        <h2>Puedes tener derechos de "uso justo" en relación con el software según la legislación aplicable. Estos términos no restringen esos derechos.</h2>
+                    </div>
+                    
+                    <div class="policy-section-title">Sin Otros Derechos</div>
+                    <div class="policy-paragraph">
+                        <h2>Estos términos no te otorgan la posibilidad de sublicenciar o transferir ninguna de tus licencias a terceros, ni impiden que el titular otorgue licencias a otras personas. No se implican otras licencias más allá de las especificadas.</h2>
+                    </div>
+                    
+                    <div class="policy-section-title">Defensa de Patentes</div>
+                    <div class="policy-paragraph">
+                        <h2>Si presentas una reclamación escrita alegando que el software infringe o contribuye a la infracción de alguna patente, tu licencia de patentes para el software bajo estos términos se cancelará de inmediato. Si tu empresa hace tal reclamación, tu licencia de patentes se cancelará de inmediato en relación con el trabajo que realices en nombre de tu empresa.</h2>
+                    </div>
+                    
+                    <div class="policy-section-title">Violaciones</div>
+                    <div class="policy-paragraph">
+                        <h2>Si se te notifica por escrito sobre una violación de estos términos, tus licencias podrán continuar si cumples plenamente con ellos y tomas medidas efectivas para corregir la violación dentro de los 32 días posteriores a la notificación. Si no lo haces, todas tus licencias se cancelarán de inmediato.</h2>
+                    </div>
+                    
+                    <div class="policy-section-title">Software de Terceros</div>
+                    <div class="policy-paragraph">
+                        <h2>Nuestros servicios pueden incluir o hacer uso de software de terceros, que incluye, pero no se limita a:</h2>
+                        <h2>Forge y Fabric Loader: Un sistema para cargar mods en Minecraft.</h2>
+                        <h2>Minecraft de Microsoft Studios: El videojuego en sí, desarrollado por Microsoft.</h2>
+                        <h2>Embeddium FiniteReality: Un optimizador de rendimiento para Minecraft.</h2>
+                        <h2>El uso de estos componentes está sujeto a los términos específicos proporcionados por los desarrolladores de dicho software. No asumimos responsabilidad por problemas o daños derivados del uso de software de terceros. Se recomienda revisar las licencias y políticas de dichos componentes para comprender sus implicaciones y restricciones.</h2>
+                    </div>
+
+                    <div class="policy-section-title">Sin Responsabilidad</div>
+                    <div class="policy-paragraph">
+                        <h2>En la medida en que lo permita la ley, el software se ofrece "tal cual", sin garantías ni condiciones, y el titular no será responsable ante ti por ningún daño derivado de estos términos o del uso o naturaleza del software, bajo cualquier tipo de reclamación legal.</h2>
+                    </div>
+
+                    <div class="policy-section-title">Responsabilidad</div>
+                    <div class="policy-paragraph">
+                        <h2>Volty Studio no se hace responsable de daños directos, indirectos, incidentales, especiales o consecuentes resultantes del uso o la imposibilidad de usar nuestros servicios. Esto incluye, pero no se limita a, la pérdida de datos, interrupción del servicio o cualquier otro daño resultante.</h2>
+                    </div>
+
+                    <div class="policy-section-title">Indemnización</div>
+                    <div class="policy-paragraph">
+                        <h2>Te comprometes a indemnizar y mantener a Volty Studio, sus directores, empleados y agentes a salvo de cualquier reclamación, demanda, responsabilidad, pérdida, daño, costo o gasto, incluidos los honorarios legales razonables, que resulten de tu uso de nuestros servicios o de cualquier incumplimiento de estos Términos de Uso.</h2>
+                    </div>
+
+                    <div class="policy-section-title">Ley Aplicable</div>
+                    <div class="policy-paragraph">
+                        <h2>Estos Términos de Uso se regirán e interpretarán de acuerdo con las leyes de España. Cualquier disputa que surja en relación con estos términos se someterá a la jurisdicción exclusiva de los tribunales en Madrid, España.</h2>
+                    </div>
+                    
+                    <div class="policy-section-title">Contacto</div>
+                    <div class="policy-paragraph">
+                        <h2>Si tienes preguntas o inquietudes sobre estos Términos y Condiciones, por favor contáctanos a través de:</h2>
+                        <h2>Correo Electrónico: <a href="mailto:contacto@voltystudio.club" style="color: #4CAF50;">contacto@voltystudio.club</a></h2>
+                        <h2>Sitio Web: <a href="https://voltystudio.club/" style="color: #4CAF50;">https://voltystudio.club/</a></h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-logo">
+            <img src="assets/logo-trans.png" alt="Volty Logo">
+        </div>
+        <div class="footer-column">
+            <h3>COMUNIDAD</h3>
+            <a href="https://discord.voltystudio.club" target="_blank" class="discord-btn">
+                <img src="assets/discord.png" alt="Discord Logo">
+            </a>
+        </div>
+        <div class="footer-column">
+            <h3>VOLTY TEAM</h3>
+            <div class="team-section">
+                <div class="team-member" data-name="LutukiSolo">
+                    <a href="lutukisolo.html">
+                        <img src="assets/fto_lutukisolo.png" alt="LutukiSolo">
+                    </a>
+                </div>
+                <div class="team-member" data-name="Basti">
+                    <a href="basti.html">
+                        <img src="assets/fto_basti.png" alt="basti">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-column">
+            <h3>EMPRESA</h3>
+            <a href="privacy.html">Política de privacidad</a>
+            <a href="terms.html">Términos y condiciones</a>
+            <a href="about.html">Acerca de</a>
+        </div>
+    </footer>
+    <div class="footer-bottom2">
+        <span>Volty Studio v0.0.2 © 2023-2025 - Todos los derechos reservados a Volty Studio marca registrada.</span>
+    </div>
+    </body>
+    </html>

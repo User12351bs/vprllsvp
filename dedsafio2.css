@@ -1,0 +1,221 @@
+/* Estilos específicos para la página de Voltysafio */
+.voltysafio-hero {
+    background-image: url('assets/bannerdedsafio2_1.jpg');
+}
+
+#evento-detalle {
+    padding: 60px 50px;
+    background-color: #000000;
+}
+
+#hero {
+    height: 30vh !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url('assets/bannerdedsafio2_1.jpg') !important;
+    background-position: bottom !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+.evento-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.evento-imagen {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+    position: relative;
+}
+
+.evento-imagen img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+.evento-info-detallada {
+    background: rgba(17, 22, 28, 0.8);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.evento-titulo {
+    font-size: 2.5rem;
+    color: #88ff70;
+    margin-bottom: 30px;
+    text-align: center;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.evento-datos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    gap: 20px;
+}
+
+.dato-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    flex: 1;
+    min-width: 200px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 3px solid #88ff70;
+}
+
+.dato-item i {
+    font-size: 2rem;
+    color: #88ff70;
+}
+
+.dato-contenido h4 {
+    margin: 0 0 5px 0;
+    font-size: 1.1rem;
+    color: #ffffff;
+}
+
+.dato-contenido p {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #88ff70;
+}
+
+.evento-descripcion-completa {
+    margin-top: 30px;
+}
+
+.evento-descripcion-completa h3 {
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #88ff70;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.evento-descripcion-completa p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    color: #e0e0e0;
+}
+
+#mas-eventos {
+    padding: 60px 50px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.mas-eventos-header {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.mas-eventos-header h3 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.mas-eventos-header p {
+    font-size: 1.2rem;
+    color: #b0b0b0;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.boton-eventos {
+    display: inline-block;
+    background-color: #88ff70;
+    color: #000;
+    padding: 15px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(136, 255, 112, 0.3);
+}
+
+.boton-eventos:hover {
+    background-color: #6dd17f;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(136, 255, 112, 0.4);
+}
+
+/* Estilos para la notificación móvil */
+.mobile-notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 500px;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.mobile-notification.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.notification-content {
+    display: flex;
+    align-items: center;
+}
+
+.notification-icon {
+    font-size: 2rem;
+    color: #ff5252;
+    margin-right: 15px;
+}
+
+.notification-text h3 {
+    margin: 0 0 5px 0;
+    color: #ff5252;
+}
+
+.notification-text p {
+    margin: 0;
+    color: #fff;
+    font-size: 0.9rem;
+}

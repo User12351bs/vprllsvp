@@ -1,0 +1,390 @@
+/* Estilos para la sección de contacto */
+#contacto {
+    padding: 60px 0;
+    background-color: #000000;
+}
+
+.contacto-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.contacto-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contacto-info h2 {
+    font-size: 1.2rem;
+    color: #9c9c9c;
+    font-weight: 500;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+nav ul li a.active {
+    color: #6dd17f;
+    position: relative;
+}
+
+.contacto-info p {
+    font-size: 1rem;
+    color: #ffffff;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.contacto-info a {
+    color: #6dd17f;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contacto-info a:hover {
+    color: #88ff70;
+    text-decoration: underline;
+}
+
+.contacto-destacado {
+    background-color: rgba(109, 209, 127, 0.1);
+    border-left: 4px solid #6dd17f;
+    padding: 15px 20px;
+    margin: 25px 0;
+    border-radius: 0 5px 5px 0;
+}
+
+.contacto-destacado p {
+    margin: 0;
+    font-size: 1.05rem;
+    color: #ffffff;
+}
+
+.contacto-email {
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.contacto-form {
+    flex: 1;
+    min-width: 300px;
+    max-width: 450px;
+    background-color: rgba(17, 22, 28, 0.5);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    position: relative;
+    overflow: visible;
+    margin: 0 auto; /* Centrar el formulario */
+}
+
+.form-legend {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.required-mark {
+    color: #ff4d4d;
+    font-weight: bold;
+    margin-left: 2px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    position: relative;
+    width: 100%;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    padding-left: 40px; /* Espacio para el icono a la izquierda */
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    margin: 0 auto; /* Centrar los campos */
+    display: block; /* Necesario para que margin: 0 auto funcione */
+}
+
+.form-group label {
+    position: absolute;
+    left: 40px; /* Alineado con el texto después del icono */
+    top: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.95rem;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus ~ label,
+.form-group textarea:focus ~ label,
+.form-group input:not(:placeholder-shown) ~ label,
+.form-group textarea:not(:placeholder-shown) ~ label {
+    top: -20px;
+    left: 10px;
+    font-size: 0.8rem;
+    color: #6dd17f;
+    font-weight: 500;
+}
+
+.form-group input:hover,
+.form-group textarea:hover {
+    border-color: rgba(109, 209, 127, 0.5);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #6dd17f;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 0 2px rgba(109, 209, 127, 0.2);
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+    padding-right: 15px;
+}
+
+/* Estilo para el control de redimensionamiento del textarea */
+.form-group textarea::-webkit-resizer {
+    background-color: rgba(109, 209, 127, 0.7);
+    border-radius: 4px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.form-group textarea:hover::-webkit-resizer {
+    background-color: #6dd17f;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.character-counter {
+    position: absolute;
+    right: 10px;
+    bottom: -20px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.form-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.5);
+    z-index: 1;
+}
+
+.form-group:hover .form-icon {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.form-group input:focus ~ .form-icon,
+.form-group textarea:focus ~ .form-icon {
+    color: #6dd17f;
+}
+
+.form-group textarea ~ .form-icon {
+    top: 15px; /* Ajusta la posición vertical del icono en el textarea */
+    transform: none; /* Elimina la transformación que se aplica a los inputs */
+}
+
+.form-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.form-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.form-checkbox input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #6dd17f;
+    cursor: pointer;
+}
+
+/* Estilo personalizado para el checkbox */
+.form-checkbox {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.form-checkbox input[type="checkbox"]:checked::before {
+    content: '✓';
+    position: absolute;
+    color: #000;
+    font-size: 14px;
+    font-weight: bold;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.form-checkbox label {
+    color: #ffffff;
+    font-size: 0.9rem;
+}
+
+/* Estilo para el enlace de políticas de privacidad */
+.form-checkbox label a {
+    color: #6dd17f; /* Color verde */
+    font-weight: bold; /* Texto en negrita */
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.form-checkbox label a:hover {
+    color: #88ff70;
+    text-decoration: underline;
+}
+
+/* Ajuste para el botón de enviar */
+.submit-btn {
+    width: 100%;
+    padding: 12px 0;
+    background-color: #6dd17f;
+    color: #000000;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 auto; /* Centrar el botón */
+    display: block; /* Necesario para que margin: 0 auto funcione */
+    margin-bottom: 20px; /* Espacio para la leyenda debajo */
+}
+
+/* Mover la leyenda debajo del botón */
+.form-legend {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.85rem;
+    margin-top: 10px;
+    text-align: left;
+    margin-bottom: 0;
+}
+
+/* Notificación de confirmación */
+.success-notification {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(109, 209, 127, 0.6);
+    color: #ffffff;
+    padding: 18px 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37), inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    z-index: 1000;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.5s ease;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    width: auto;
+    max-width: 90%;
+    display: flex;
+    align-items: center;
+}
+
+.success-notification.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.success-notification .notification-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    color: #ffffff;
+    font-size: 1.5rem;
+    background-color: rgba(109, 209, 127, 0.8);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(109, 209, 127, 0.5);
+}
+
+.success-notification .notification-text {
+    display: inline-block;
+    font-weight: 500;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    line-height: 1.4;
+}
+
+.submit-btn:hover {
+    background-color: #88ff70;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(109, 209, 127, 0.3);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+#hero {
+    height: 50vh !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url('assets/bannercontacto.jpg') !important;
+    background-position: bottom !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+    .contacto-container {
+        flex-direction: column;
+    }
+    
+    .contacto-info,
+    .contacto-form {
+        width: 100%;
+    }
+    
+    .form-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .recaptcha-box {
+        align-self: center;
+    }
+}

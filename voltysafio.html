@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volty Studio</title>
+    <link rel="icon" href="assets/logo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="voltysafio.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- Notificación para dispositivos móviles -->
+    <div id="mobile-notification" class="mobile-notification">
+        <div class="close-button">
+            <i class="fas fa-times"></i>
+        </div>
+        <div class="notification-content">
+            <div class="notification-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <div class="notification-text">
+                <h3>¡Atención!</h3>
+                <p>Esta página no está preparada para dispositivos móviles. Para disfrutar de la mejor experiencia, te recomendamos acceder desde un ordenador.</p>
+            </div>
+        </div>
+    </div>
+    
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li> 
+                    <li><a href="eventos.html" class="active">Eventos</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <a href="index.html" class="logo-title">
+                <img src="assets/logo-trans.png" alt="Logo" class="logo">
+                <h1>VOLTY STUDIO</h1>
+            </a>
+        </div>
+    </header>   
+
+    <main>
+        <section id="hero" class="voltysafio-hero">
+        </section>
+
+        <section id="evento-detalle">
+            <div class="evento-container">
+                <div class="evento-info-detallada">
+                    <h2 class="evento-titulo">VOLTYSAFIO 3</h2>
+                    <div class="evento-datos">
+                        <div class="dato-item">
+                            <i class="far fa-calendar-alt"></i>
+                            <div class="dato-contenido">
+                                <h4>Fecha</h4>
+                                <p>27 nov 2024</p>
+                            </div>
+                        </div>
+                        <div class="dato-item">
+                            <i class="fas fa-users"></i>
+                            <div class="dato-contenido">
+                                <h4>Participantes</h4>
+                                <p>120+</p>
+                            </div>
+                        </div>
+                        <div class="dato-item">
+                            <i class="fas fa-clock"></i>
+                            <div class="dato-contenido">
+                                <h4>Duración</h4>
+                                <p>30 días</p>
+                            </div>
+                        </div>
+                        <div class="dato-item">
+                            <i class="fas fa-eye"></i>
+                            <div class="dato-contenido">
+                                <h4>Viewers</h4>
+                                <p>500+ pico</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="evento-descripcion-completa">
+                        <h3>Sobre el evento</h3>
+                        <p>En 2024 se celebró Voltysafio 3, una competencia que reunió a más de 120 participantes entre jugadores y creadores de contenido. Organizado por Volty Studio, con el concepto original de Eufonia Studio, este evento se desarrolló a lo largo de un mes completo.</p>
+                        <p>En esta tercera edición, se incorporaron Gulags, mazmorras, nuevos monstruos y poderosos jefes. La ruleta diaria añadía constantemente amenazas que incrementaban el desafío del servidor, todas influenciadas por la figura del temible REviil.</p>
+                        <p>Los participantes debían sobrevivir en un entorno hostil, colaborando entre ellos pero también compitiendo por recursos limitados. Cada día traía nuevos desafíos y sorpresas, manteniendo a los jugadores y espectadores en constante tensión.</p>
+                    </div>
+                </div>
+                <div class="evento-imagen">
+                    <div class="slider-container">
+                        <div class="slider">
+                            <img src="assets/bannervoltysafio.jpg" alt="Imagen 0" class="slide active">
+                            <img src="assets/bannervoltysafio1.png" alt="Imagen 1" class="slide">
+                            <img src="assets/bannervoltysafio2.png" alt="Imagen 2" class="slide">
+                            <img src="assets/bannervoltysafio3.png" alt="Imagen 3" class="slide">
+                            <img src="assets/bannervoltysafio4.png" alt="Imagen 4" class="slide">
+                        </div>
+                        <div class="slider-controls">
+                            <button class="slider-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                            <div class="slider-dots">
+                                <span class="dot active" data-index="0"></span>
+                                <span class="dot" data-index="1"></span>
+                                <span class="dot" data-index="2"></span>
+                                <span class="dot" data-index="3"></span>
+                                <span class="dot" data-index="4"></span>
+                            </div>
+                            <button class="slider-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="mas-eventos">
+            <div class="mas-eventos-header">
+                <h3><span class="white-text">Descubre</span> <span class="green-text">más eventos</span><span class="white-dot">.</span></h3>
+                <p>¿Quieres conocer otros eventos creados por Volty Studio? Explora nuestra galería de proyectos y descubre todas las experiencias que hemos creado para la comunidad.</p>
+                <a href="eventos.html" class="boton-eventos">Ver todos los eventos</a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-logo">
+                <img src="assets/logo-trans.png" alt="Volty Logo">
+            </div>
+            <div class="footer-column">
+                <h3>COMUNIDAD</h3>
+                <a href="https://discord.voltystudio.club" target="_blank" class="discord-btn">
+                    <img src="assets/discord.png" alt="Discord Logo">
+                </a>
+            </div>
+            <div class="footer-column">
+                <h3>VOLTY TEAM</h3>
+                <div class="team-section">
+                    <div class="team-member" data-name="LutukiSolo">
+                        <a href="lutukisolo.html">
+                            <img src="assets/fto_lutukisolo.png" alt="LutukiSolo">
+                        </a>
+                    </div>
+                    <div class="team-member" data-name="Basti">
+                        <a href="basti.html">
+                            <img src="assets/fto_basti.png" alt="basti">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>EMPRESA</h3>
+                <a href="privacy.html">Política de privacidad</a>
+                <a href="terms.html">Términos y condiciones</a>
+                <a href="about.html">Acerca de</a>
+            </div>
+        </footer>
+
+        <div class="footer-bottom2">
+            <span>Volty Studio v0.0.2 © 2023-2025 - Todos los derechos reservados a Volty Studio marca registrada.</span>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Código existente para la notificación móvil
+            function isMobileDevice() {
+                return (window.innerWidth <= 768) || 
+                       /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            }
+            
+            // Mostrar notificación solo en dispositivos móviles
+            if (isMobileDevice()) {
+                const notification = document.getElementById('mobile-notification');
+                const closeButton = notification.querySelector('.close-button');
+                
+                // Mostrar la notificación con animación
+                setTimeout(function() {
+                    notification.classList.add('show');
+                }, 500);
+                
+                // Ocultar la notificación después de 10 segundos
+                const autoHideTimeout = setTimeout(function() {
+                    notification.classList.remove('show');
+                    
+                    // Añadir un timeout para cambiar el z-index después de la animación
+                    setTimeout(function() {
+                        notification.style.zIndex = '-1'; // Poner por debajo de todo
+                    }, 500); // Mismo tiempo que la duración de la transición
+                }, 10500);
+                
+                // Evento para cerrar la notificación al hacer clic en el botón de cierre
+                closeButton.addEventListener('click', function() {
+                    notification.classList.remove('show');
+                    clearTimeout(autoHideTimeout); // Cancelar el cierre automático
+                    
+                    // Añadir un timeout para cambiar el z-index después de la animación
+                    setTimeout(function() {
+                        notification.style.zIndex = '-1'; // Poner por debajo de todo
+                    }, 500); // Mismo tiempo que la duración de la transición
+                });
+            }
+            
+            // Código para el slider
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.dot');
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            let currentIndex = 0;
+            
+            // Función para mostrar un slide específico
+            function showSlide(index) {
+                // Ocultar todos los slides
+                slides.forEach(slide => {
+                    slide.classList.remove('active');
+                });
+                
+                // Desactivar todos los dots
+                dots.forEach(dot => {
+                    dot.classList.remove('active');
+                });
+                
+                // Mostrar el slide actual
+                slides[index].classList.add('active');
+                dots[index].classList.add('active');
+                currentIndex = index;
+            }
+            
+            // Event listeners para los botones
+            prevBtn.addEventListener('click', function() {
+                let newIndex = currentIndex - 1;
+                if (newIndex < 0) newIndex = slides.length - 1;
+                showSlide(newIndex);
+            });
+            
+            nextBtn.addEventListener('click', function() {
+                let newIndex = currentIndex + 1;
+                if (newIndex >= slides.length) newIndex = 0;
+                showSlide(newIndex);
+            });
+            
+            // Event listeners para los dots
+            dots.forEach(dot => {
+                dot.addEventListener('click', function() {
+                    const index = parseInt(this.getAttribute('data-index'));
+                    showSlide(index);
+                });
+            });
+            
+            // Cambio automático de slides cada 5 segundos
+            setInterval(function() {
+                let newIndex = currentIndex + 1;
+                if (newIndex >= slides.length) newIndex = 0;
+                showSlide(newIndex);
+            }, 5000);
+        });
+    </script>
+</body>
+</html>

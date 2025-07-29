@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volty Studio</title>
+    <link rel="icon" href="assets/logo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- Notificación para dispositivos móviles -->
+    <div id="mobile-notification" class="mobile-notification">
+        <div class="close-button">
+            <i class="fas fa-times"></i>
+        </div>
+        <div class="notification-content">
+            <div class="notification-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <div class="notification-text">
+                <h3>¡Atención!</h3>
+                <p>Esta página no está preparada para dispositivos móviles. Para disfrutar de la mejor experiencia, te recomendamos acceder desde un ordenador.</p>
+            </div>
+        </div>
+    </div>
+    
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="index.html" class=active>Inicio</a></li> 
+                    <li><a href="eventos.html">Eventos</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <a href="index.html" class="logo-title">
+                <img src="assets/logo-trans.png" alt="Logo" class="logo">
+                <h1>VOLTY STUDIO</h1>
+            </a>
+        </div>
+    </header>    
+
+    <main>
+        <section id="hero">
+            <h1>VOLTY STUDIO</h1>
+            <h2>Creadores de contenido para la comunidad.</h2>
+        </section>
+
+        <section id="info">
+            <h3>Recreamos la magia de los grandes</h3>
+            <h4>  Para que vivas momentos únicos<span class="white-dot">.</span></h4>
+            <h2>Recreamos eventos de grandes estudios para que puedas vivir esa experiencia por ti mismo. Con más de 4 años de experiencia, hacemos que lo extraordinario sea accesible.</h2>
+        </section>
+
+        <section id="proyectos">
+            <div class="proyectos-header">
+                <h3>Nuestros</span> <span class="green-text">proyectos</span><span class="white-dot">.</h3>
+            </div>
+            
+            <div class="slider-container">
+                <div class="slider">
+                    <a href="dedsafio2.html" class="slide active">
+                        <img src="assets/bannerdedsafio2.jpg" alt="DEDSAFIO 2">
+                        <div class="slide-info">
+                            <h4>DEDSAFIO 2</h4>
+                            <p>Durante el año 2022 tuvo lugar la primera edición de Dedsafío 2 hecha por Volty Studio, una competencia basada en una idea original de Eufonia Studio. Este evento, que marcó el debut oficial de Volty Studio, reunió a más de un centenar de participantes, incluyendo tanto jugadores como creadores de contenido. A lo largo de varios meses, se introdujeron mecánicas únicas como los Gulags y criaturas inéditas, mientras que una ruleta diaria añadía constantemente nuevos peligros. Todo el entorno del servidor giraba en torno a la presencia dominante de REviil, quien intensificaba la dificultad día tras día.</p>
+                        </div>
+                    </a>
+                    <a href="voltysafio.html" class="slide">
+                        <img src="assets/bannervoltysafio.jpg" alt="VOLTYSAFIO">
+                        <div class="slide-info">
+                            <h4>VOLTYSAFIO 3</h4>
+                            <p>En 2024 se celebró Dedsafío Minecraft 3, una competencia que reunió a más de 120 participantes entre jugadores y creadores de contenido. Organizado 
+por Volty Studio, con el concepto original de Eufonia Studio, este evento se desarrolló a lo largo de un mes completo. En esta tercera edición, se 
+incorporaron Gulags, mazmorras, nuevos monstruos y poderosos jefes. La ruleta diaria añadía constantemente amenazas que incrementaban 
+el  desafío del servidor, todas influenciadas por la figura del temible REviil.</p>
+                        </div>
+                    </a>
+                    <a href="contacto.html" class="slide">
+                        <img src="assets/bannerprox.jpg" alt="PROX">
+                        <div class="slide-info">
+                            <h4>PRÓXIMAMENTE...</h4>
+                            <p>¿Cual será este evento?</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="slider-controls">
+                    <button class="slider-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                    <div class="slider-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <button class="slider-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+        <section id="fotos-destacadas">
+            <div class="fotos-header">
+                <h3>
+                    <span class="white-text">Fotos</span>
+                    <span class="green-text"> destacadas</span><span class="white-dot">.</span>
+                </h3>
+            </div>
+            <div class="carousel">
+                <div class="carousel-images">
+                    <img src="assets/bannervoltysafio.jpg" alt="Imagen 0">
+                    <img src="assets/bannervoltysafio1.png" alt="Imagen 1">
+                    <img src="assets/bannervoltysafio2.png" alt="Imagen 2">
+                    <img src="assets/bannervoltysafio3.png" alt="Imagen 3">
+                    <img src="assets/bannervoltysafio4.png" alt="Imagen 4">
+                    <!-- Duplicadas para bucle continuo -->
+                    <img src="assets/bannervoltysafio.jpg" alt="Imagen 0">
+                    <img src="assets/bannervoltysafio1.png" alt="Imagen 1">
+                    <img src="assets/bannervoltysafio2.png" alt="Imagen 2">
+                    <img src="assets/bannervoltysafio3.png" alt="Imagen 3">
+                    <img src="assets/bannervoltysafio4.png" alt="Imagen 4">                </div>
+            </div>
+        </section>
+
+        <!-- Moved colaboradores section here -->
+        <section id="colaboradores">
+            <div class="colaboradores-header">
+                <h3>
+                    <span class="white-text">Nuestros</span>
+                    <span class="green-text"> colaboradores</span><span class="white-dot">.</span>
+                </h3>
+            </div>
+            <div class="colaboradores-list">
+                <a href="https://discord.gg/3peNETBTUG" target="_blank" class="colaborador-card">
+                    <div class="card-content">  <!-- Nuevo div contenedor -->
+                        <div class="colaborador-img" style="background-image: url('assets/bannersvstudio.jpg');"></div>
+                        <div class="colaborador-name">SV STUDIO</div>
+                    </div>
+                    <div class="colaborador-info">
+                        <div class="colaborador-info-title">SV STUDIO</div>
+                        <div class="colaborador-info-desc">
+                            Somos un studios de programacion de minecraft nuestro meta es ser un studios que haga feliz ala gente nosotros no queremos fama pero si nos gusta que la gente este feliz y se divierta.
+                        </div>
+                    </div>
+                </a>
+                <a href="contacto.html" class="colaborador-card">
+                    <div class="card-content">  <!-- Nuevo div contenedor -->
+                        <div class="colaborador-img" style="background-image: url('assets/bannerprox.jpg');"></div>
+                        <div class="colaborador-name">¿Quieres ser uno?</div>
+                    </div>
+                    <div class="colaborador-info">
+                        <div class="colaborador-info-title">¿Quieres ser uno?</div>
+                        <div class="colaborador-info-desc">
+                            Contáctanos y veremos que podemos hacer...
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+        <!-- Footer remains below -->
+    <footer class="footer">
+        <div class="footer-logo">
+            <img src="assets/logo-trans.png" alt="Volty Logo">
+        </div>
+        <div class="footer-column">
+            <h3>COMUNIDAD</h3>
+            <a href="https://discord.voltystudio.club" target="_blank" class="discord-btn">
+                <img src="assets/discord.png" alt="Discord Logo">
+            </a>
+        </div>
+        <div class="footer-column">
+            <h3>VOLTY TEAM</h3>
+            <div class="team-section">
+                <div class="team-member" data-name="LutukiSolo">
+                    <a href="lutukisolo.html">
+                        <img src="assets/fto_lutukisolo.png" alt="LutukiSolo">
+                    </a>
+                </div>
+                <div class="team-member" data-name="Basti">
+                    <a href="basti.html">
+                        <img src="assets/fto_basti.png" alt="basti">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-column">
+            <h3>EMPRESA</h3>
+            <a href="privacy.html">Política de privacidad</a>
+            <a href="terms.html">Términos y condiciones</a>
+            <a href="about.html">Acerca de</a>
+        </div>
+    </footer>
+
+    <div class="footer-bottom2">
+        <span>Volty Studio v0.0.2 © 2023-2025 - Todos los derechos reservados a Volty Studio marca registrada.</span>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.dot');
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            let currentSlide = 0;
+            let slideInterval;
+            
+            function showSlide(index) {
+                slides.forEach(slide => slide.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
+                
+                slides[index].classList.add('active');
+                dots[index].classList.add('active');
+                currentSlide = index;
+            }
+            
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }
+            
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(currentSlide);
+            }
+            
+            function startSlideInterval() {
+                slideInterval = setInterval(nextSlide, 5000); // Cambiar cada 5 segundos
+            }
+            
+            function stopSlideInterval() {
+                clearInterval(slideInterval);
+            }
+            
+            nextBtn.addEventListener('click', function() {
+                stopSlideInterval();
+                nextSlide();
+                startSlideInterval();
+            });
+            
+            prevBtn.addEventListener('click', function() {
+                stopSlideInterval();
+                prevSlide();
+                startSlideInterval();
+            });
+            
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', function() {
+                    stopSlideInterval();
+                    showSlide(index);
+                    startSlideInterval();
+                });
+            });
+            
+            showSlide(0);
+            startSlideInterval();
+        });
+    </script>
+    </body>
+    </html>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Función para detectar si es un dispositivo móvil
+            function isMobileDevice() {
+                return (window.innerWidth <= 768) || 
+                       /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            }
+            
+            // Mostrar notificación solo en dispositivos móviles
+            if (isMobileDevice()) {
+                const notification = document.getElementById('mobile-notification');
+                const closeButton = notification.querySelector('.close-button');
+                
+                // Mostrar la notificación con animación
+                setTimeout(function() {
+                    notification.classList.add('show');
+                }, 500);
+                
+                // Ocultar la notificación después de 10 segundos
+                const autoHideTimeout = setTimeout(function() {
+                    notification.classList.remove('show');
+                    
+                    // Añadir un timeout para cambiar el z-index después de la animación
+                    setTimeout(function() {
+                        notification.style.zIndex = '-1'; // Poner por debajo de todo
+                    }, 500); // Mismo tiempo que la duración de la transición
+                }, 10500);
+                
+                // Evento para cerrar la notificación al hacer clic en el botón de cierre
+                closeButton.addEventListener('click', function() {
+                    notification.classList.remove('show');
+                    clearTimeout(autoHideTimeout); // Cancelar el cierre automático
+                    
+                    // Añadir un timeout para cambiar el z-index después de la animación
+                    setTimeout(function() {
+                        notification.style.zIndex = '-1'; // Poner por debajo de todo
+                    }, 500); // Mismo tiempo que la duración de la transición
+                });
+            }
+        });
+    </script>
+</body>
+</html>

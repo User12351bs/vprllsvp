@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volty Studio</title>
+    <link rel="icon" href="assets/logo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="contacto.css">
+    <link rel="stylesheet" href="index.css">
+    
+</head>
+<body>
+    <!-- Notificación para dispositivos móviles -->
+    <div id="mobile-notification" class="mobile-notification">
+        <div class="close-button">
+            <i class="fas fa-times"></i>
+        </div>
+        <div class="notification-content">
+            <div class="notification-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <div class="notification-text">
+                <h3>¡Atención!</h3>
+                <p>Esta página no está preparada para dispositivos móviles. Para disfrutar de la mejor experiencia, te recomendamos acceder desde un ordenador.</p>
+            </div>
+        </div>
+    </div>
+    
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li> 
+                    <li><a href="eventos.html">Eventos</a></li>
+                    <li><a href="contacto.html" class="active">Contacto</a></li>
+                </ul>
+            </nav>
+            <a href="index.html" class="logo-title">
+                <img src="assets/logo-trans.png" alt="Logo" class="logo">
+                <h1>VOLTY STUDIO</h1>
+            </a>
+        </div>
+    </header>   
+
+    <main>
+        <section id="hero">
+            <h1>CONTACTO</h1>
+        </section>
+
+        <section id="contacto">
+            <div class="contacto-container">
+                <div class="contacto-info">
+                    <h2>En Volty Studio nos dedicamos a recrear eventos de grandes estudios y a desarrollar experiencias únicas para streamers y comunidades. Nuestro enfoque abarca la creación de torneos competitivos, series de supervivencia en Minecraft y eventos personalizados diseñados tanto para creadores de contenido como para sus audiencias.</h2>
+                    
+                    <p>También trabajamos tanto en eventos públicos como privados, adaptándonos a las necesidades de cada creador o proyecto.</p>
+                    
+                    <p>Si quieres descubrir más sobre lo que hacemos y conocer algunos de nuestros trabajos anteriores, te invitamos a <a href="eventos.html">ver más</a>.</p>
+                    
+                    <div class="contacto-destacado">
+                        <p>¿Tienes una idea increíble y no sabes por dónde empezar? ¿Quieres dar vida a tu proyecto y te gustaría conocer nuestras propuestas? Contáctanos y hagámoslo realidad juntos.</p>
+                    </div>
+                    
+                    <p class="contacto-email">Contacto: <a href="mailto:contacto@voltystudio.club">contacto@voltystudio.club</a></p>
+                </div>
+                
+                <div class="contacto-form">
+                    <!-- Modificar la etiqueta form para usar FormCarry -->
+                    <form id="contact-form" action="https://formsubmit.co/contacto@voltystudio.club" method="POST">
+                        <input type="hidden" name="_captcha" value="false">
+                        <!-- Campos ocultos para configurar FormCarry -->
+                        <input type="hidden" name="_subject" value="Nuevo mensaje desde Volty Studio">
+                        <input type="hidden" name="_next" value="https://voltystudio.club/contacto.html?success=true">
+                        
+                        <div class="form-group">
+                            <input type="text" id="nombre" name="nombre" placeholder="" required>
+                            <label for="nombre">Nombre<span class="required-mark">*</span></label>
+                            <div class="form-icon">
+                                <i class="fas fa-user"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="" required>
+                            <label for="email">Correo Electrónico<span class="required-mark">*</span></label>
+                            <div class="form-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="text" id="asunto" name="asunto" placeholder="" required>
+                            <label for="asunto">Asunto<span class="required-mark">*</span></label>
+                            <div class="form-icon">
+                                <i class="fas fa-tag"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea id="mensaje" name="mensaje" placeholder="" required maxlength="1500"></textarea>
+                            <label for="mensaje">Escribe tu mensaje para nosotros aquí...<span class="required-mark">*</span></label>
+                            <div class="form-icon">
+                                <i class="fas fa-comment-alt"></i>
+                            </div>
+                            <div class="character-counter"><span id="char-count">0</span>/1500</div>
+                        </div>
+                        
+                        <div class="form-footer">
+                            <div class="form-checkbox">
+                                <input type="checkbox" id="terminos" name="terminos" required>
+                                <label for="terminos">Acepto las <a href="privacy.html">políticas de privacidad</a> de Volty Studio</label>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Enviar</button>
+                        <p class="form-legend"><span class="required-mark">*</span> Campos obligatorios</p>
+                    </form>
+                </div>
+                
+                <!-- Notificación de éxito -->
+                <div id="success-notification" class="success-notification">
+                    <div class="notification-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="notification-text">
+                        ¡Mensaje enviado con éxito! Te contactaremos pronto.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-logo">
+            <img src="assets/logo-trans.png" alt="Volty Logo">
+        </div>
+        <div class="footer-column">
+            <h3>COMUNIDAD</h3>
+            <a href="https://discord.voltystudio.club" target="_blank" class="discord-btn">
+                <img src="assets/discord.png" alt="Discord Logo">
+            </a>
+        </div>
+        <div class="footer-column">
+            <h3>VOLTY TEAM</h3>
+            <div class="team-section">
+                <div class="team-member" data-name="LutukiSolo">
+                    <a href="lutukisolo.html">
+                        <img src="assets/fto_lutukisolo.png" alt="LutukiSolo">
+                    </a>
+                </div>
+                <div class="team-member" data-name="Basti">
+                    <a href="basti.html">
+                        <img src="assets/fto_basti.png" alt="basti">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-column">
+            <h3>EMPRESA</h3>
+            <a href="privacy.html">Política de privacidad</a>
+            <a href="terms.html">Términos y condiciones</a>
+            <a href="about.html">Acerca de</a>
+        </div>
+    </footer>
+
+    <div class="footer-bottom2">
+        <span>Volty Studio v0.0.2 © 2023-2025 - Todos los derechos reservados a Volty Studio marca registrada.</span>
+    </div>
+    
+    <!-- Reemplazar el código JavaScript de envío del formulario -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Función para detectar si es un dispositivo móvil
+            function isMobileDevice() {
+                return (window.innerWidth <= 768) || 
+                       /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            }
+            
+            // Mostrar notificación solo en dispositivos móviles
+            if (isMobileDevice()) {
+                const notification = document.getElementById('mobile-notification');
+                const closeButton = notification.querySelector('.close-button');
+                
+                // Mostrar la notificación con animación
+                setTimeout(function() {
+                    notification.classList.add('show');
+                }, 500);
+                
+                // Ocultar la notificación después de 10 segundos
+                const autoHideTimeout = setTimeout(function() {
+                    notification.classList.remove('show');
+                    
+                    // Añadir un timeout para cambiar el z-index después de la animación
+                    setTimeout(function() {
+                        notification.style.zIndex = '-1'; // Poner por debajo de todo
+                    }, 500); // Mismo tiempo que la duración de la transición
+                }, 10500);
+                
+                // Evento para cerrar la notificación al hacer clic en el botón de cierre
+                closeButton.addEventListener('click', function() {
+                    notification.classList.remove('show');
+                    clearTimeout(autoHideTimeout); // Cancelar el cierre automático
+                    
+                    // Añadir un timeout para cambiar el z-index después de la animación
+                    setTimeout(function() {
+                        notification.style.zIndex = '-1'; // Poner por debajo de todo
+                    }, 500); // Mismo tiempo que la duración de la transición
+                });
+            }
+            
+            // Contador de caracteres para el textarea
+            const mensajeTextarea = document.getElementById('mensaje');
+            const charCount = document.getElementById('char-count');
+            
+            if (mensajeTextarea && charCount) {
+                mensajeTextarea.addEventListener('input', function() {
+                    const currentLength = this.value.length;
+                    charCount.textContent = currentLength;
+                    
+                    // Cambiar color cuando se acerca al límite
+                    if (currentLength > 1400) {
+                        charCount.style.color = '#ff4d4d';
+                    } else if (currentLength > 1200) {
+                        charCount.style.color = '#ffaa00';
+                    } else {
+                        charCount.style.color = '#ffffff';
+                    }
+                });
+            }
+            
+            // Verificar si hay un parámetro de éxito en la URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const successParam = urlParams.get('success');
+            
+            // Mostrar la notificación de éxito si el parámetro success es true
+            if (successParam === 'true') {
+                const successNotification = document.getElementById('success-notification');
+                
+                if (successNotification) {
+                    // Mostrar la notificación de éxito
+                    successNotification.classList.add('show');
+                    
+                    // Ocultar la notificación después de 12 segundos
+                    setTimeout(function() {
+                        successNotification.classList.remove('show');
+                    }, 12000);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
